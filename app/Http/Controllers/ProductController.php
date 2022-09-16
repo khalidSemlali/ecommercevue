@@ -19,4 +19,14 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $product = Product::where('id', $request->productId)->first();
+        $count = (new CartRepository())->add($product);
+
+        return response()->json([
+            'count' => $count
+        ]);
+    }
 }

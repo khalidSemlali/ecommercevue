@@ -1,12 +1,8 @@
 <script>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import AddToCart from "@/pages/Components/AddToCart.vue";
-import NavbarCart from "@/Pages/Components/NavbarCart.vue";
 export default {
     components: {
         AppLayout,
-        AddToCart,
-        NavbarCart,
     },
     props: {
         products: {},
@@ -23,8 +19,6 @@ export default {
                 Produits
             </h2>
         </template>
-
-        <navbar-cart></navbar-cart>
 
         <div class="mx-auto container py-8">
             <div
@@ -75,9 +69,6 @@ export default {
                                         ></path>
                                     </svg>
                                 </div>
-                                <add-to-cart
-                                    :product-id="`{$product.id}`"
-                                ></add-to-cart>
                             </div>
                             <div class="p-4">
                                 <div class="flex items-center">
